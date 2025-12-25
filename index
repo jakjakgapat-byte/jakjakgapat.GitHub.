@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriTech Innovation | อนาคตการเกษตรไทย</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo">Agri<span>Tech</span></div>
+        <ul>
+            <li><a href="#">หน้าแรก</a></li>
+            <li><a href="#features">เทคโนโลยี</a></li>
+            <li><a href="#about">เกี่ยวกับเรา</a></li>
+            <li><a href="#" class="btn-contact">ติดต่อเรา</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>ยกระดับการเกษตรด้วยเทคโนโลยีสมัยใหม่</h1>
+            <p>เพิ่มผลผลิต ลดต้นทุน และบริหารจัดการฟาร์มอย่างแม่นยำด้วยระบบ Smart Farming</p>
+            <a href="#features" class="btn-main">เริ่มต้นเรียนรู้</a>
+        </div>
+    </header>
+
+    <section id="features" class="features">
+        <h2>นวัตกรรมของเรา</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon">🛰️</div>
+                <h3>โดรนเพื่อการเกษตร</h3>
+                <p>สำรวจพื้นที่และฉีดพ่นปุ๋ยแม่นยำสูง ลดการสัมผัสสารเคมี</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🌡️</div>
+                <h3>เซ็นเซอร์ IoT</h3>
+                <p>วัดความชื้น อุณหภูมิ และสารอาหารในดินแบบ Real-time</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">📊</div>
+                <h3>AI วิเคราะห์ผลผลิต</h3>
+                <p>คาดการณ์ช่วงเวลาเก็บเกี่ยวและตรวจสอบโรคพืชด้วยระบบ AI</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 AgriTech Innovation. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
+2. ไฟล์ตกแต่ง (style.css)
+ก๊อปปี้ส่วนนี้ไปวางในไฟล์ชื่อ style.css เพื่อให้เว็บมีสีเขียวสดใสและจัดวางอย่างเป็นระเบียบ
+
+CSS
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Kanit', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9fdf9;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 600;
+    color: #2d5a27;
+}
+
+.logo span { color: #8bc34a; }
+
+nav ul { display: flex; list-style: none; }
+
+nav ul li { margin-left: 30px; }
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    transition: 0.3s;
+}
+
+nav ul li a:hover { color: #2d5a27; }
+
+/* Hero Section */
+.hero {
+    height: 80vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
+
+.btn-main {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #8bc34a;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.btn-main:hover { background: #689f38; }
+
+/* Features Section */
+.features { padding: 80px 10%; text-align: center; }
+
+.features h2 { margin-bottom: 40px; font-size: 2rem; color: #2d5a27; }
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.feature-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s;
+}
+
+.feature-card:hover { transform: translateY(-10px); }
+
+.feature-card .icon { font-size: 40px; margin-bottom: 15px; }
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #2d5a27;
+    color: white;
+}
