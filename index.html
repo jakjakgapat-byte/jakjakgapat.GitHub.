@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriTech Innovation | เทคโนโลยีเพื่อเกษตรกรไทย</title>
+    <title>Smart Farm อนาคตเกษตรอัจฉริยะไทย | AgriTech</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
-    
     <style>
-        /* CSS สำหรับการตกแต่งทั้งหมด */
+        :root {
+            --primary-green: #2d5a27;
+            --light-green: #7cb342;
+            --bg-color: #f0f4f0;
+            --text-dark: #333;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -16,9 +21,9 @@
         }
 
         body {
-            background-color: #f4f9f4;
-            color: #333;
-            line-height: 1.6;
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.8;
         }
 
         /* Navigation */
@@ -26,43 +31,22 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
-            background: #ffffff;
+            padding: 15px 8%;
+            background: #fff;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
             position: sticky;
             top: 0;
             z-index: 1000;
         }
 
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2d5a27;
-        }
+        .logo { font-size: 24px; font-weight: bold; color: var(--primary-green); }
+        .logo span { color: var(--light-green); }
 
-        .logo span { color: #7cb342; }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li { margin-left: 30px; }
-
-        nav ul li a {
-            text-decoration: none;
-            color: #444;
-            font-weight: 400;
-            transition: 0.3s;
-        }
-
-        nav ul li a:hover { color: #2d5a27; }
-
-        /* Hero Section - พื้นหลังภาพขนาดใหญ่ */
+        /* Hero Section */
         .hero {
-            height: 70vh;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                        url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1470');
+            height: 60vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                        url('https://images.unsplash.com/photo-1560493676-04071c5f467b?auto=format&fit=crop&q=80&w=1474');
             background-size: cover;
             background-position: center;
             display: flex;
@@ -73,136 +57,134 @@
             padding: 0 20px;
         }
 
-        .hero-content h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
+        .hero h1 { font-size: 2.5rem; margin-bottom: 15px; }
+
+        /* Content Section */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        .content-block {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            margin-bottom: 40px;
+        }
+
+        .content-block h2 {
+            color: var(--primary-green);
+            border-left: 5px solid var(--light-green);
+            padding-left: 15px;
             margin-bottom: 20px;
         }
 
-        .hero-content p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-        }
-
-        .btn-main {
-            display: inline-block;
-            padding: 12px 35px;
-            background: #7cb342;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .btn-main:hover { background: #558b2f; transform: scale(1.05); }
-
-        /* Features Section */
-        .section-title {
-            text-align: center;
-            margin: 60px 0 40px;
-            font-size: 2rem;
-            color: #2d5a27;
-        }
-
-        .features-container {
+        .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 0 8% 60px;
+            gap: 25px;
+            margin-top: 30px;
         }
 
-        .card {
-            background: white;
+        .feature-item {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 12px;
+            border-bottom: 4px solid var(--light-green);
+        }
+
+        .feature-item h4 { color: var(--primary-green); margin-bottom: 10px; }
+
+        /* Image Display */
+        .img-wrap {
+            width: 100%;
+            height: 350px;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: 0.3s;
+            margin: 20px 0;
         }
 
-        .card:hover { transform: translateY(-10px); }
+        .img-wrap img { width: 100%; height: 100%; object-fit: cover; }
 
-        .card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-        }
-
-        .card-content { padding: 25px; }
-
-        .card-content h3 {
-            color: #2d5a27;
-            margin-bottom: 15px;
-        }
-
-        /* Footer */
         footer {
-            background: #2d5a27;
+            background: var(--primary-green);
             color: white;
             text-align: center;
-            padding: 40px 0;
-            margin-top: 40px;
+            padding: 30px;
+            margin-top: 50px;
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            nav { flex-direction: column; }
-            nav ul { margin-top: 20px; }
-            nav ul li { margin: 0 10px; }
+            .hero h1 { font-size: 1.8rem; }
+            .content-block { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Agri<span>Tech</span></div>
-        <ul>
-            <li><a href="#">หน้าหลัก</a></li>
-            <li><a href="#tech">เทคโนโลยี</a></li>
-            <li><a href="#service">บริการ</a></li>
-            <li><a href="#contact">ติดต่อเรา</a></li>
-        </ul>
+        <div class="logo">SMART<span>FARM</span></div>
+        <div style="font-size: 0.9rem; color: #666;">ความรู้โดย ARDA</div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>เทคโนโลยีเพื่ออนาคตการเกษตร</h1>
-            <p>เพิ่มประสิทธิภาพการเพาะปลูกด้วยระบบอัจฉริยะ IoT และโดรนสำรวจพื้นที่ เพื่อผลผลิตที่ยั่งยืน</p>
-            <a href="#tech" class="btn-main">ดูนวัตกรรมของเรา</a>
+            <h1>Smart Farm: เกษตรอัจฉริยะ</h1>
+            <p>การบริหารจัดการฟาร์มด้วยเทคโนโลยีความแม่นยำสูง</p>
         </div>
     </header>
 
-    <h2 id="tech" class="section-title">นวัตกรรมล้ำสมัย</h2>
-    <div class="features-container">
-        
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1508197149814-0cc02e8b7f74?auto=format&fit=crop&q=80&w=1000" alt="Drone">
-            <div class="card-content">
-                <h3>โดรนเกษตรอัจฉริยะ</h3>
-                <p>ช่วยลดการใช้แรงงานในการฉีดพ่นสารอาหารพืช และวิเคราะห์พื้นที่ด้วยภาพถ่ายทางอากาศอย่างแม่นยำ</p>
+    <div class="container">
+        <section class="content-block">
+            <h2>เกษตรอัจฉริยะคืออะไร?</h2>
+            <p>
+                จากข้อมูลของ <strong>ARDA</strong> เกษตรอัจฉริยะ (Smart Farm) คือ รูปแบบการทำเกษตรที่เน้นการใช้เทคโนโลยีล้ำสมัย 
+                หรือที่เรียกว่า <strong>"เกษตรแม่นยำสูง" (Precision Agriculture)</strong> ซึ่งแตกต่างจากการเกษตรทั่วไปที่ใช้การคาดเดา 
+                แต่ Smart Farm จะใช้ข้อมูลจริงในการตัดสินใจ
+            </p>
+            <div class="img-wrap">
+                <img src="https://images.unsplash.com/photo-1628352081506-83c43123ed6d?auto=format&fit=crop&q=80&w=1500" alt="Smart Farming Technology">
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1000" alt="IoT">
-            <div class="card-content">
-                <h3>ระบบเซ็นเซอร์ IoT</h3>
-                <p>ตรวจสอบความชื้นในดินและอุณหภูมิแบบ Real-time ผ่านสมาร์ทโฟน เพื่อการจัดการทรัพยากรน้ำที่คุ้มค่า</p>
+        <section class="content-block">
+            <h2>4 เสาหลักของ Smart Farm</h2>
+            <div class="grid">
+                <div class="feature-item">
+                    <h4>1. ระบบเซ็นเซอร์ (Sensors)</h4>
+                    <p>ใช้เก็บข้อมูลสภาพดิน ความชื้น อุณหภูมิ และแสงแดด เพื่อให้เข้าใจสภาพแวดล้อมของพืชอย่างลึกซึ้ง</p>
+                </div>
+                <div class="feature-item">
+                    <h4>2. การส่งต่อข้อมูล (IoT)</h4>
+                    <p>เชื่อมโยงอุปกรณ์ต่างๆ เข้ากับอินเทอร์เน็ต ทำให้เกษตรกรดูข้อมูลได้จากทุกที่ผ่านสมาร์ทโฟน</p>
+                </div>
+                <div class="feature-item">
+                    <h4>3. การประมวลผล (Big Data)</h4>
+                    <p>นำข้อมูลที่เก็บได้มาวิเคราะห์เพื่อหาช่วงเวลาที่เหมาะสมที่สุดในการหว่านเมล็ด ให้ปุ๋ย หรือเก็บเกี่ยว</p>
+                </div>
+                <div class="feature-item">
+                    <h4>4. เครื่องจักรกลอัตโนมัติ</h4>
+                    <p>การใช้โดรนหรือรถแทรกเตอร์ไร้คนขับที่ทำงานตามคำสั่งที่แม่นยำ ลดการใช้แรงงานและสารเคมี</p>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1595841055318-47db993e8016?auto=format&fit=crop&q=80&w=1000" alt="Greenhouse">
-            <div class="card-content">
-                <h3>โรงเรือนอัตโนมัติ</h3>
-                <p>ระบบควบคุมสภาพแวดล้อมที่ช่วยให้ปลูกพืชนอกฤดูกาลได้ และป้องกันแมลงศัตรูพืชได้อย่างมีประสิทธิภาพ</p>
-            </div>
-        </div>
-
+        <section class="content-block">
+            <h2>เป้าหมายสำคัญ</h2>
+            <p>หัวใจสำคัญของเทคโนโลยีนี้คือ <strong>"การใช้ทรัพยากรให้เกิดประโยชน์สูงสุด"</strong> ดังนี้:</p>
+            <ul style="margin-left: 20px; margin-top: 15px;">
+                <li><strong>ลดต้นทุน:</strong> ให้ปุ๋ยและน้ำเฉพาะจุดที่ต้องการ ไม่สิ้นเปลือง</li>
+                <li><strong>เพิ่มผลผลิต:</strong> พืชได้รับสารอาหารที่พอเหมาะ ทำให้เจริญเติบโตได้เต็มที่</li>
+                <li><strong>ยั่งยืน:</strong> ลดผลกระทบต่อสิ่งแวดล้อมจากการใช้สารเคมีเกินจำเป็น</li>
+            </ul>
+        </section>
     </div>
 
     <footer>
-        <p>&copy; 2024 AgriTech Innovation - ยกระดับเกษตรกรไทยด้วยเทคโนโลยี</p>
+        <p>อ้างอิงข้อมูลจาก: สำนักงานพัฒนาการวิจัยการเกษตร (องค์การมหาชน) - ARDA</p>
+        <p>&copy; 2024 AgriTech Learning Hub</p>
     </footer>
 
 </body>
