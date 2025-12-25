@@ -3,162 +3,207 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AgriTech Innovation | อนาคตการเกษตรไทย</title>
-    <link rel="stylesheet" href="style.css">
+    <title>AgriTech Innovation | เทคโนโลยีเพื่อเกษตรกรไทย</title>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS สำหรับการตกแต่งทั้งหมด */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Kanit', sans-serif;
+        }
+
+        body {
+            background-color: #f4f9f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2d5a27;
+        }
+
+        .logo span { color: #7cb342; }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        nav ul li { margin-left: 30px; }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #444;
+            font-weight: 400;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover { color: #2d5a27; }
+
+        /* Hero Section - พื้นหลังภาพขนาดใหญ่ */
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&q=80&w=1470');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero-content h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+
+        .btn-main {
+            display: inline-block;
+            padding: 12px 35px;
+            background: #7cb342;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover { background: #558b2f; transform: scale(1.05); }
+
+        /* Features Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 40px;
+            font-size: 2rem;
+            color: #2d5a27;
+        }
+
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 8% 60px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-content { padding: 25px; }
+
+        .card-content h3 {
+            color: #2d5a27;
+            margin-bottom: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background: #2d5a27;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+            margin-top: 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav { flex-direction: column; }
+            nav ul { margin-top: 20px; }
+            nav ul li { margin: 0 10px; }
+        }
+    </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">Agri<span>Tech</span></div>
         <ul>
-            <li><a href="#">หน้าแรก</a></li>
-            <li><a href="#features">เทคโนโลยี</a></li>
-            <li><a href="#about">เกี่ยวกับเรา</a></li>
-            <li><a href="#" class="btn-contact">ติดต่อเรา</a></li>
+            <li><a href="#">หน้าหลัก</a></li>
+            <li><a href="#tech">เทคโนโลยี</a></li>
+            <li><a href="#service">บริการ</a></li>
+            <li><a href="#contact">ติดต่อเรา</a></li>
         </ul>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>ยกระดับการเกษตรด้วยเทคโนโลยีสมัยใหม่</h1>
-            <p>เพิ่มผลผลิต ลดต้นทุน และบริหารจัดการฟาร์มอย่างแม่นยำด้วยระบบ Smart Farming</p>
-            <a href="#features" class="btn-main">เริ่มต้นเรียนรู้</a>
+            <h1>เทคโนโลยีเพื่ออนาคตการเกษตร</h1>
+            <p>เพิ่มประสิทธิภาพการเพาะปลูกด้วยระบบอัจฉริยะ IoT และโดรนสำรวจพื้นที่ เพื่อผลผลิตที่ยั่งยืน</p>
+            <a href="#tech" class="btn-main">ดูนวัตกรรมของเรา</a>
         </div>
     </header>
 
-    <section id="features" class="features">
-        <h2>นวัตกรรมของเรา</h2>
-        <div class="feature-grid">
-            <div class="feature-card">
-                <div class="icon">🛰️</div>
-                <h3>โดรนเพื่อการเกษตร</h3>
-                <p>สำรวจพื้นที่และฉีดพ่นปุ๋ยแม่นยำสูง ลดการสัมผัสสารเคมี</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">🌡️</div>
-                <h3>เซ็นเซอร์ IoT</h3>
-                <p>วัดความชื้น อุณหภูมิ และสารอาหารในดินแบบ Real-time</p>
-            </div>
-            <div class="feature-card">
-                <div class="icon">📊</div>
-                <h3>AI วิเคราะห์ผลผลิต</h3>
-                <p>คาดการณ์ช่วงเวลาเก็บเกี่ยวและตรวจสอบโรคพืชด้วยระบบ AI</p>
+    <h2 id="tech" class="section-title">นวัตกรรมล้ำสมัย</h2>
+    <div class="features-container">
+        
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1508197149814-0cc02e8b7f74?auto=format&fit=crop&q=80&w=1000" alt="Drone">
+            <div class="card-content">
+                <h3>โดรนเกษตรอัจฉริยะ</h3>
+                <p>ช่วยลดการใช้แรงงานในการฉีดพ่นสารอาหารพืช และวิเคราะห์พื้นที่ด้วยภาพถ่ายทางอากาศอย่างแม่นยำ</p>
             </div>
         </div>
-    </section>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?auto=format&fit=crop&q=80&w=1000" alt="IoT">
+            <div class="card-content">
+                <h3>ระบบเซ็นเซอร์ IoT</h3>
+                <p>ตรวจสอบความชื้นในดินและอุณหภูมิแบบ Real-time ผ่านสมาร์ทโฟน เพื่อการจัดการทรัพยากรน้ำที่คุ้มค่า</p>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1595841055318-47db993e8016?auto=format&fit=crop&q=80&w=1000" alt="Greenhouse">
+            <div class="card-content">
+                <h3>โรงเรือนอัตโนมัติ</h3>
+                <p>ระบบควบคุมสภาพแวดล้อมที่ช่วยให้ปลูกพืชนอกฤดูกาลได้ และป้องกันแมลงศัตรูพืชได้อย่างมีประสิทธิภาพ</p>
+            </div>
+        </div>
+
+    </div>
 
     <footer>
-        <p>&copy; 2024 AgriTech Innovation. All rights reserved.</p>
+        <p>&copy; 2024 AgriTech Innovation - ยกระดับเกษตรกรไทยด้วยเทคโนโลยี</p>
     </footer>
 
 </body>
 </html>
-2. ไฟล์ตกแต่ง (style.css)
-ก๊อปปี้ส่วนนี้ไปวางในไฟล์ชื่อ style.css เพื่อให้เว็บมีสีเขียวสดใสและจัดวางอย่างเป็นระเบียบ
-
-CSS
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Kanit', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f9fdf9;
-}
-
-/* Navigation */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.logo {
-    font-size: 24px;
-    font-weight: 600;
-    color: #2d5a27;
-}
-
-.logo span { color: #8bc34a; }
-
-nav ul { display: flex; list-style: none; }
-
-nav ul li { margin-left: 30px; }
-
-nav ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: 400;
-    transition: 0.3s;
-}
-
-nav ul li a:hover { color: #2d5a27; }
-
-/* Hero Section */
-.hero {
-    height: 80vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?auto=format&fit=crop&q=80&w=1470') no-repeat center center/cover;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: white;
-}
-
-.hero-content h1 { font-size: 3rem; margin-bottom: 20px; }
-
-.btn-main {
-    display: inline-block;
-    padding: 12px 30px;
-    background: #8bc34a;
-    color: white;
-    text-decoration: none;
-    border-radius: 25px;
-    margin-top: 20px;
-    transition: 0.3s;
-}
-
-.btn-main:hover { background: #689f38; }
-
-/* Features Section */
-.features { padding: 80px 10%; text-align: center; }
-
-.features h2 { margin-bottom: 40px; font-size: 2rem; color: #2d5a27; }
-
-.feature-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-}
-
-.feature-card {
-    background: white;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    transition: transform 0.3s;
-}
-
-.feature-card:hover { transform: translateY(-10px); }
-
-.feature-card .icon { font-size: 40px; margin-bottom: 15px; }
-
-footer {
-    text-align: center;
-    padding: 20px;
-    background: #2d5a27;
-    color: white;
-}
